@@ -2,34 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --color-primary: hsl(210, 100%, 50%);
-  --color-accent: hsl(142, 76%, 36%);
-  --color-text: hsl(210, 24%, 16%);
-  --color-bg: hsl(0, 0%, 100%);
-}
-
 @layer base {
-  * {
-    @apply border-border;
+  :root {
+    --progress-width: 0%;
   }
   
   body {
-    @apply bg-white text-text font-sans;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @layer components {
   .progress-bar-fill {
-    transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: width 0.5s ease-out;
   }
   
-  .card-hover {
-    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  
-  .card-hover:hover {
-    @apply shadow-hover transform -translate-y-1;
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
